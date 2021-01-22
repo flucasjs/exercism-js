@@ -1,22 +1,10 @@
-//
-// This is only a SKELETON file for the 'Square root' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const squareRoot = (num) => {
-
-  if (num === 0 || num === 1) {
-
-    return num;
-
-  }
-
-  let squareRoot = 2;
+export const squareRoot = (square) => {
+  let estimate = square;
   
-  while (squareRoot * squareRoot != num) {
-    squareRoot++;
+  // Heron's Method
+  for (let i = 0; i < 10; i++) {
+    estimate = (estimate + (square / estimate)) / 2;
   }
 
-  return i;
-
+  return Math.floor(estimate);
 };
