@@ -15,5 +15,5 @@ export const age = (planet, seconds) => {
   const earthYears = seconds / SECONDS_PER_EARTH_YEAR;
   const conversionFactor = 1 / EARTH_YEAR_ORBITAL_PERIOD[planet];
 
-  return Math.round(earthYears * conversionFactor * 1e2) / 1e2;
+  return Math.round(earthYears * conversionFactor * 1e2) / 1e2 ;
 };
