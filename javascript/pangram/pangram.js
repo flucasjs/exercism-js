@@ -1,8 +1,7 @@
-export const isPangram = (pangram) => {
-    let s = pangram
-        .toLowerCase()
-        .replace(/[^a-z]/g, '')
-        .replace(/(.)(?=.*\1)/g, "")
-        .split('').sort().join('');
-    return (s === "abcdefghijklmnopqrstuvwxyz");
+export const isPangram = (strToTest) => {
+    if (strToTest) {
+        const invalidChars = strToTest.match(/[^a-z]|(.)(?=.*\1)/gi)
+        return (!invalidChars || strToTest.length - invalidChars.length === 26);
+    }
+    return false;
 };
